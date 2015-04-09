@@ -1,1 +1,1 @@
-# laravel-5-pagination
+# Laravel 5 Pagination
