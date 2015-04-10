@@ -10,14 +10,14 @@ Add service provider "App\Lib\Pagination\PaginationServiceProvider"
 
 #### Controller
 ```
-use App\Lib\Pagination\Pagination;
+use **App\Lib\Pagination\Pagination**;
 
 class HomeController extends Controller {
 
-    private $pagination;
+    private **$pagination**;
 
-    public function __construct(Pagination $pagination) {
-        $this->pagination = $pagination;
+    public function __construct(**Pagination $pagination**) {
+        **$this->pagination = $pagination**;
     }
 
 	public function index(Request $request) {
@@ -26,11 +26,11 @@ class HomeController extends Controller {
 	    $products = Product::paginate(3);
 	    
 	    // Pagination set($products, $baseUrl)
-        $paginator = $this->pagination->set($products, $request->getBaseUrl());
+        **$paginator = $this->pagination->set($products, $request->getBaseUrl());**
         
         // Return view
         return view('home')
-            ->with(compact('products', 'paginator'));
+            ->with(compact('products', '**paginator**'));
 	}
 
 ```
@@ -45,7 +45,7 @@ class HomeController extends Controller {
     </ul>
 </nav>
 ```
-OR
+**or**
 ```
 @if($paginator->hasPrevPage)
     <li>
