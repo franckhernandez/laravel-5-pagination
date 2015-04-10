@@ -16,7 +16,7 @@ class HomeController extends Controller {
 
     private $pagination;
 
-    public function __construct(**Pagination $pagination**) {
+    public function __construct(Pagination $pagination) {
         $this->pagination = $pagination;
     }
 
