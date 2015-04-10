@@ -21,10 +21,13 @@ class HomeController extends Controller {
     }
 
 	public function index(Request $request) {
+	
 	    // Eloquent 3 per/page
 	    $products = Product::paginate(3);
+	    
 	    // Pagination set($products, $baseUrl)
         $paginator = $this->pagination->set($products, $request->getBaseUrl());
+        
         // Return view
         return view('home')
             ->with(compact('products', 'paginator'));
@@ -41,4 +44,32 @@ class HomeController extends Controller {
         {!! $paginator->renderBootstrap('Prev', 'Next') !!}
     </ul>
 </nav>
+```
+OR
+```
+@if($paginator->hasPrevPage)
+    <li>
+        <a href="{{ $paginator->prevPageUrl }}">Prev</a>
+    </li>
+@endif
+
+@if($paginator->lastPage > 1)
+    @foreach($paginator->currentPages as $currentPage)
+        @if($paginator->currentPage == $currentPage->num)
+            <li class="active">
+                <a href="{{ $currentPage->url }}">{{ $currentPage->num  }}</a>
+            </li>
+        @else
+            <li>
+                <a href="{{ $currentPage->url }}">{{ $currentPage->num  }}</a>
+            </li>
+        @endif
+    @endforeach
+@endif
+
+@if($paginator->hasNextPage)
+    <li>
+        <a href="{{ $paginator->nextPageUrl }}">Next</a>
+    </li>
+@endif
 ```
