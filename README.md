@@ -47,29 +47,33 @@ class HomeController extends Controller {
 ```
 **or**
 ```
-@if($paginator->hasPrevPage)
-    <li>
-        <a href="{{ $paginator->prevPageUrl }}">Prev</a>
-    </li>
-@endif
+<nav>
+    <ul class="pagination">
+		@if($paginator->hasPrevPage)
+			<li>
+				<a href="{{ $paginator->prevPageUrl }}">Prev</a>
+			</li>
+		@endif
 
-@if($paginator->lastPage > 1)
-    @foreach($paginator->currentPages as $currentPage)
-        @if($paginator->currentPage == $currentPage->num)
-            <li class="active">
-                <a href="{{ $currentPage->url }}">{{ $currentPage->num  }}</a>
-            </li>
-        @else
-            <li>
-                <a href="{{ $currentPage->url }}">{{ $currentPage->num  }}</a>
-            </li>
-        @endif
-    @endforeach
-@endif
+		@if($paginator->lastPage > 1)
+			@foreach($paginator->currentPages() as $currentPage)
+				@if($paginator->currentPage == $currentPage->num)
+					<li class="active">
+						<a href="{{ $currentPage->url }}">{{ $currentPage->num  }}</a>
+					</li>
+				@else
+					<li>
+						<a href="{{ $currentPage->url }}">{{ $currentPage->num  }}</a>
+					</li>
+				@endif
+			@endforeach
+		@endif
 
-@if($paginator->hasNextPage)
-    <li>
-        <a href="{{ $paginator->nextPageUrl }}">Next</a>
-    </li>
-@endif
+		@if($paginator->hasNextPage)
+			<li>
+				<a href="{{ $paginator->nextPageUrl }}">Next</a>
+			</li>
+		@endif
+	</ul>
+</nav>
 ```

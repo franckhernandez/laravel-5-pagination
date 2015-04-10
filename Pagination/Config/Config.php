@@ -4,7 +4,6 @@ abstract class Config {
 
     public $baseUrl;
     public $currentPage;
-    public $currentPages;
 
     public $prevPageUrl;
     public $hasPrevPage;
