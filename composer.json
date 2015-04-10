@@ -1,28 +1,14 @@
 {
     "name": "laravel-5/pagination",
     "license": "MIT",
+    "description" : "Easy Pagination",
+    "require": {
+        "php": ">=5.4.0"
+    },
     "authors": [
         {
-            "name": "Franck Hernandez",
-            "email": "aucune@hotmail.com"
+            "name": "Franck Hernandez"
         }
-    ],
-    "require": {
-        
-    },
-    "autoload": {
-        
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "5.0-dev"
-        }
-    },
-    "minimum-stability": "dev",
-	"source": { 
-		"type": "git", 
-		"url": "https://github.com/franckhernandez/laravel-5-pagination.git", 
-		"reference": "54c1c840507f6b638863098b759abdcd8a8e88f8" 
-	}
+    ]
 
 }
