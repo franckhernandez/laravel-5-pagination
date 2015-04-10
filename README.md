@@ -2,9 +2,9 @@
 
 # Installation
 
-** Copy Pagination into your "app/Lib/" directory **
+**Copy Pagination into your "app/Lib/" directory**
 
-** Add service provider "App\Lib\Pagination\PaginationServiceProvider" **
+**Add service provider "App\Lib\Pagination\PaginationServiceProvider"**
 
 # Usage
 
