@@ -2,9 +2,9 @@
 
 # Installation
 
-**Copy Pagination into your "app/Lib/" directory**
+Copy Pagination into your **"app/Lib/"** directory
 
-**Add service provider "App\Lib\Pagination\PaginationServiceProvider"**
+Add service provider **"App\Lib\Pagination\PaginationServiceProvider"**
 
 # Usage
 
@@ -58,14 +58,9 @@ class HomeController extends Controller {
 		@if($paginator->lastPage > 1)
 			@foreach($paginator->currentPages() as $currentPage)
 				@if($paginator->currentPage == $currentPage->num)
-					<li class="active">
+					<li class="active">@else<li>@endif
 						<a href="{{ $currentPage->url }}">{{ $currentPage->num  }}</a>
 					</li>
-				@else
-					<li>
-						<a href="{{ $currentPage->url }}">{{ $currentPage->num  }}</a>
-					</li>
-				@endif
 			@endforeach
 		@endif
 
