@@ -39,7 +39,7 @@ class HomeController extends Controller {
 #### View
 
 ```
-<nav style="margin-top: 30px">
+<nav>
     <ul class="pagination">
         {!! $paginator->renderBootstrap('Prev', 'Next') !!}
     </ul>
