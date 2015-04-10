@@ -14,7 +14,7 @@ use **App\Lib\Pagination\Pagination**;
 
 class HomeController extends Controller {
 
-    private **$pagination**;
+    private ** $pagination **;
 
     public function __construct(**Pagination $pagination**) {
         **$this->pagination = $pagination**;
